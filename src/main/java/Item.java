@@ -38,6 +38,7 @@ public class Item {
         }
 
         public String toString() {
-            return "Item " + name + "\tInventory current amount: " + amount + "\n";
+            return "Item " + name + "\tCurrent amount: " + amount + "\n";
         }
+
     }

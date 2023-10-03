@@ -32,21 +32,32 @@ public class InventoryManagementSystem {
                     Item butter = new Item("2) Butter", butterAmount);
                     Item bread = new Item("3) Bread", breadAmount);
                     System.out.println(milk.toString() + butter.toString() + bread.toString());
+
+                    int userInputInc = Item.getNumericInput();
+
+                    if(userInput == 1) {
+                        System.out.println("How much would you like" + milk.getName() + "to increase?");
+                    } else {
+                        System.out.println("N/A");
+                    }
+
+
                 }
+
                 if (userInput == 2) {
                     System.out.println("Which items would you like to decrease?");
                     ArrayList<Item> inventory = new ArrayList<Item>();
-                    Item milk = new Item("1) Milk", 30);
-                    Item butter = new Item("2) Butter", 40);
-                    Item bread = new Item("3) Bread", 60);
+                    Item milk = new Item("1) Milk", milkAmount);
+                    Item butter = new Item("2) Butter", butterAmount);
+                    Item bread = new Item("3) Bread", breadAmount);
                     System.out.println(milk.toString() + butter.toString() + bread.toString());
                 }
                 if (userInput == 3) {
                     System.out.println("Showing items?");
                     ArrayList<Item> inventory = new ArrayList<Item>();
-                    Item milk = new Item("1) Milk", 30);
-                    Item butter = new Item("2) Butter", 40);
-                    Item bread = new Item("3) Bread", 60);
+                    Item milk = new Item("1) Milk", milkAmount);
+                    Item butter = new Item("2) Butter", butterAmount);
+                    Item bread = new Item("3) Bread", breadAmount);
                     System.out.println(milk.toString() + butter.toString() + bread.toString());
 
                     System.out.println("Enter x to return to menu");
@@ -59,7 +70,7 @@ public class InventoryManagementSystem {
                 }
             }
                 else{
-                    System.out.println("Invalid option1.");
+                    System.out.println("Invalid option.");
                     manageItems();
                 }
             }
