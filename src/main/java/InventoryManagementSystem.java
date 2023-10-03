@@ -21,32 +21,29 @@ public class InventoryManagementSystem {
             options.add("2) Decrease items");
             options.add("3) Show items");
 
-            for (String i : options){
-                System.out.println(i);
-            }
+            Item.displayMenu(options);
 
-            if (scanner.hasNextDouble()){
-                String input = scanner.nextLine();
-                int j = Integer.parseInt(input);
-                if(j == 1){
+            int userInput = Item.getNumericInput();
+            if(userInput == 3 || userInput == 2 || userInput == 1) {
+                if (userInput == 1) {
                     System.out.println("Which items would you like to increase?");
-                    ArrayList <Item> inventory = new ArrayList<Item>();
+                    ArrayList<Item> inventory = new ArrayList<Item>();
                     Item milk = new Item("1) Milk", milkAmount);
                     Item butter = new Item("2) Butter", butterAmount);
                     Item bread = new Item("3) Bread", breadAmount);
                     System.out.println(milk.toString() + butter.toString() + bread.toString());
                 }
-                if(j == 2){
+                if (userInput == 2) {
                     System.out.println("Which items would you like to decrease?");
-                    ArrayList <Item> inventory = new ArrayList<Item>();
+                    ArrayList<Item> inventory = new ArrayList<Item>();
                     Item milk = new Item("1) Milk", 30);
                     Item butter = new Item("2) Butter", 40);
                     Item bread = new Item("3) Bread", 60);
                     System.out.println(milk.toString() + butter.toString() + bread.toString());
                 }
-                if(j == 3){
+                if (userInput == 3) {
                     System.out.println("Showing items?");
-                    ArrayList <Item> inventory = new ArrayList<Item>();
+                    ArrayList<Item> inventory = new ArrayList<Item>();
                     Item milk = new Item("1) Milk", 30);
                     Item butter = new Item("2) Butter", 40);
                     Item bread = new Item("3) Bread", 60);
@@ -54,15 +51,16 @@ public class InventoryManagementSystem {
 
                     System.out.println("Enter x to return to menu");
                     String k = scanner.nextLine();
-                    if(k.charAt(0) == 'x'){
+                    if (k.charAt(0) == 'x') {
                         manageItems();
                     } else {
                         System.out.println("Invalid option");
                     }
                 }
-            } else {
-                System.out.println("Invalid number. Please insert a number.");
-                manageItems();
+            }
+                else{
+                    System.out.println("Invalid option1.");
+                    manageItems();
+                }
             }
         }
-    }
